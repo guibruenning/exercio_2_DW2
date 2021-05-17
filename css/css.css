@@ -1,0 +1,48 @@
+.dice {
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100px;
+}
+
+.buttonClick {
+    position: absolute;
+    top: 30vh;
+    left: 10vw;
+}
+
+.conteudo {
+    margin-top: 20px;
+}
+
+.containerWinner {
+    position: absolute;
+    display: flex;
+    width: 400px;
+    height: 100px;
+    top: 26vh;
+    left: 28vw;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+    .containerWinner {
+        top: inherit;
+        bottom: 12vh;
+        left: 4vh;
+        max-width: 300px;
+    }
+    .buttonClick {
+        bottom: 30vh;
+        top: inherit;
+    }
+}
+
+.containerWinner .winner {
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}

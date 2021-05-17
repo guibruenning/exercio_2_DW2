@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Lista 1</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="./JS/functions.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous" />
+        <link href="css/css.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container conteudo">
+    <div>
+        <button id="buttonClick" nome="buttonClick" class="buttonClick btn-lg btn btn-primary">Jogar Dados</button>
+    </div>
+    <div class="row">
+        <div class="divDice col">
+            <label>Dado 1 Jogador</label>
+            <div class="dice um hide"></div>
+
+        </div>
+        <div class="divDice col">
+            <label>Dado 2 Jogador</label>
+            <div class="dice dois hide"></div>
+        </div>
+        <div class="divDice col">
+            <label>Dado 1 Computador</label>
+            <div class="dice tres hide"></div>
+        </div>
+        <div class="divDice col">
+            <label>Dado 2 Computador</label>
+            <div class="dice quatro hide"></div>
+        </div>
+    </div>
+
+    <div class="container containerWinner hide">
+        <label>O vencedor é </label>
+
+        <div class="winner fs-1 bg-primary bg-gradient"></div>
+        <label>com o Jogador tirando <b class="resultPlayer"></b> e o Computador tirando <b class="resultComputer"></b></label>
+    </div>
+    
+</div>
+<script>
+
+    $(".buttonClick").click(()=>{
+        setRan(randomFunction(), randomFunction(), randomFunction(), randomFunction())
+
+        dices(".um")
+
+        setTimeout(dices, 2000, ".dois")
+        
+        setTimeout(dices, 4000, ".tres")
+        
+        setTimeout(dices, 6000, ".quatro")
+        
+        setTimeout(function(){
+            $('.containerWinner').removeClass('hide')
+            $('.winner').text(winner())
+            $('.resultPlayer').text(getPlayer())
+            $('.resultComputer').text(getComputer())
+        },8000)
+    })
+</script>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    </body>
+</html>
